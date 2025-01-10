@@ -8,7 +8,7 @@ const Signup = () => {
         name: '',
         email: '',
         password: '',
-        role: '',
+        role: 'student',
         semester: '',
         regNo: '',
     });
