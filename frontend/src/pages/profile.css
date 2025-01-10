@@ -1,0 +1,81 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.profile-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.profile-details h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.profile-details p {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #555;
+}
+
+.profile-details p strong {
+    font-weight: 600;
+    color: #333;
+}
+.profile-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.profile-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.profile-picture img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.profile-details input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.profile-actions button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.profile-actions button:hover {
+    background-color: #45a049;
+}
+
+.image-upload {
+    margin-top: 10px;
+}
