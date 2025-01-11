@@ -12,7 +12,7 @@ function QuizList() {
   useEffect(() => {
     const fetchSubjects = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/subjects');
+        const response = await axios.get('https://backend-express-inky.vercel.app/api/subjects');
         setSubjects(response.data);
       } catch (error) {
         console.error('Error fetching subjects:', error);
@@ -26,7 +26,7 @@ function QuizList() {
     if (selectedSubject) {
       const fetchQuizzes = async () => {
         try {
-          const response = await axios.get(`http://localhost:5000/api/quizzes/getBySubject/${selectedSubject}`);
+          const response = await axios.get(`https://backend-express-inky.vercel.app/api/quizzes/getBySubject/${selectedSubject}`);
           setQuizzes(response.data);
         } catch (error) {
           console.error('Error fetching quizzes:', error);
@@ -41,7 +41,7 @@ function QuizList() {
   const handleDeleteQuiz = async (quizId) => {
     try {
       // Send delete request to the server
-      await axios.delete(`http://localhost:5000/api/quizzes/${quizId}`).then(()=>{
+      await axios.delete(`https://backend-express-inky.vercel.app/api/quizzes/${quizId}`).then(()=>{
         alert('Quiz deleted successfully');
       });
       

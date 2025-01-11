@@ -15,7 +15,7 @@ function EditSubject() {
   useEffect(() => {
     const fetchSubject = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/subjects/${subjectId}`);
+        const response = await axios.get(`https://backend-express-inky.vercel.app/api/subjects/${subjectId}`);
         setName(response.data.name);
         setCourseCode(response.data.courseCode);
       } catch (error) {
@@ -31,7 +31,7 @@ function EditSubject() {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:5000/api/subjects/${subjectId}`, {
+      const response = await axios.put(`https://backend-express-inky.vercel.app/api/subjects/${subjectId}`, {
         name,
         courseCode,
       });

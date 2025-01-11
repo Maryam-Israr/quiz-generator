@@ -13,7 +13,7 @@ function EditQuiz() {
   useEffect(() => {
     const fetchQuiz = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/quizzes/${quizId}`);
+        const response = await axios.get(`https://backend-express-inky.vercel.app/api/quizzes/${quizId}`);
         console.log(response);
         setQuiz(response.data);
         setTitle(response.data.title);
@@ -71,7 +71,7 @@ function EditQuiz() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:5000/api/quizzes/${quizId}`, { title, questions });
+      await axios.put(`https://backend-express-inky.vercel.app/api/quizzes/${quizId}`, { title, questions });
       alert('Quiz updated successfully');
       navigate('/admin/quizzes');
     } catch (error) {

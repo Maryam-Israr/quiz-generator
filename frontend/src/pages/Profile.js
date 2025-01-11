@@ -25,7 +25,7 @@ const Profile = () => {
             }
 
             try {
-                const response = await axios.get(`http://localhost:5000/api/users/${userId}`);
+                const response = await axios.get(`https://backend-express-inky.vercel.app/api/users/${userId}`);
                 setProfileData(response.data);
                 setLoading(false);
             } catch (error) {
@@ -50,7 +50,7 @@ const Profile = () => {
 console.log(profileData);
         const userId = localStorage.getItem('userId');
         try {
-            const response = await axios.put(`http://localhost:5000/api/users/${userId}`, profileData);
+            const response = await axios.put(`https://backend-express-inky.vercel.app/api/users/${userId}`, profileData);
             console.log('Response:', response.data);
             setProfileData(response.data);
             setIsEditing(false); // Toggle edit mode off

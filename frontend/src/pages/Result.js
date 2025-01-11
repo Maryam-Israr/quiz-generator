@@ -15,7 +15,7 @@ function UserQuizList() {
     useEffect(() => {
         const fetchSubjects = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/subjects');
+                const response = await axios.get('https://backend-express-inky.vercel.app/api/subjects');
                 setSubjects(response.data);
             } catch (error) {
                 console.error('Error fetching subjects:', error);
@@ -29,7 +29,7 @@ function UserQuizList() {
         if (selectedSubject) {
             const fetchQuizzes = async () => {
                 try {
-                    const response = await axios.get(`http://localhost:5000/api/quizzes/getBySubject/${selectedSubject}`);
+                    const response = await axios.get(`https://backend-express-inky.vercel.app/api/quizzes/getBySubject/${selectedSubject}`);
                     setQuizzes(response.data);
                 } catch (error) {
                     console.error('Error fetching quizzes:', error);
@@ -40,7 +40,7 @@ function UserQuizList() {
             // Fetch user quiz scores based on the selected subject
             const fetchUserScores = async () => {
                 try {
-                    const response = await axios.get(`http://localhost:5000/api/users/${userId}`);
+                    const response = await axios.get(`https://backend-express-inky.vercel.app/api/users/${userId}`);
                     console.log(response);
                     const scores = response.data.quizScores.filter(score => score.subject.toString() === selectedSubject);
                     setUserScores(scores);

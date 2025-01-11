@@ -24,7 +24,7 @@ function CreateQuiz() {
   useEffect(() => {
     const fetchSubjects = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/subjects');
+        const response = await axios.get('https://backend-express-inky.vercel.app/api/subjects');
         setSubjects(response.data);
       } catch (error) {
         console.error('Error fetching subjects:', error);
@@ -65,7 +65,7 @@ function CreateQuiz() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/quizzes/create', { subjectId, title, questions });
+      const response = await axios.post('https://backend-express-inky.vercel.app/api/quizzes/create', { subjectId, title, questions });
       alert('Quiz created successfully');
     } catch (error) {
       alert('Error creating quiz');

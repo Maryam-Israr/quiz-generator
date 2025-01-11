@@ -14,7 +14,7 @@ function TakeQuiz() {
     useEffect(() => {
         const fetchQuizDetails = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/quizzes/${quizId}`);
+                const response = await axios.get(`https://backend-express-inky.vercel.app/api/quizzes/${quizId}`);
                 console.log(response);
                 setQuiz(response.data);
             } catch (error) {
@@ -61,7 +61,7 @@ function TakeQuiz() {
     
         // Make API call to save the quiz score for the user using axios
         try {
-            const response = await axios.post('http://localhost:5000/api/quizzes/save-quiz-score', quizData);
+            const response = await axios.post('https://backend-express-inky.vercel.app/api/quizzes/save-quiz-score', quizData);
             alert(`Your score is: ${score} / ${quiz.questions.length}`);
         } catch (error) {
             console.error('Error saving quiz score:', error);

@@ -18,7 +18,7 @@ function CreateSubject() {
   useEffect(() => {
     const fetchSubjects = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/subjects');
+        const response = await axios.get('https://backend-express-inky.vercel.app/api/subjects');
         setSubjects(response.data);
       } catch (error) {
         console.error('Error fetching subjects:', error);
@@ -31,7 +31,7 @@ function CreateSubject() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/subjects/create', { name, courseCode });
+      const response = await axios.post('https://backend-express-inky.vercel.app/api/subjects/create', { name, courseCode });
       setMessage(`Subject created successfully: ${response.data.name}`);
       setSubjects((prevSubjects) => [...prevSubjects, response.data]);
       setName('');
@@ -44,7 +44,7 @@ function CreateSubject() {
   // Handle delete subject
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/subjects/${id}`);
+      await axios.delete(`https://backend-express-inky.vercel.app/api/subjects/${id}`);
       setSubjects((prevSubjects) => prevSubjects.filter((subject) => subject._id !== id));
       setMessage('Subject deleted successfully');
     } catch (error) {
